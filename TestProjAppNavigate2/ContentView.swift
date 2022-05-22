@@ -35,7 +35,18 @@ struct HomeView: View {
         NavigationView {
             ZStack{
                 Color.mint
-                Text("Home Screen")
+                VStack {
+                    Text("Home Screen")
+                    NavigationLink("#1 Go to a screen", destination: Text("Hey Welcome to screen example 1"))
+                        .foregroundStyle(.white)
+                    
+                    NavigationLink(destination: Text("Hey welcome to the profile screen")){
+                        Image(systemName: "person")
+                            .symbolVariant(.fill.circle)
+                            .foregroundStyle(.white)
+                            .font(.title)
+                    }
+                }
             }
             .navigationTitle("Home")
         }
